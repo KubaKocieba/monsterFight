@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Slayer</title>
+
+    <link rel="stylesheet" href="src/css/foundation.min.css">
+    <link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+<div id="app">
+    <div id="battle">
+    <section class="row">
+        <div class="small-6 columns">
+            <h1 class="text-center">YOU</h1>
+            <div class="healthbar">
+                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+                :style="{width: (you > 0 ? you : 0) + '%'}">
+                  <span v-if="started">{{ you }} </span>
+                </div>
+            </div>
+            <canvas v-if="started" id="youCanvas"></canvas>
+        <img id="rocket" src="./src/gfx/rocket.gif" style="left: 30vw"/>
+        <img id="rocketBoom" src="./src/gfx/boom.gif" style="right: 22vw"/>
+        <img id="pistolBlast" src="./src/gfx/pistol_blast.gif" />
+                <div v-if="you > monster && monster < 1" class="whoWin">
+        SNAKE WINS
+        </div>
+        <div v-else-if="you < monster && you < 1" class="whoWin">
+        MONSTER WINS
+        </div>
+        </div>
+        <div class="small-6 columns">
+            <h1 class="text-center">MONSTER</h1>
+            <div class="healthbar">
+                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+                :style="{width: (monster > 0 ? monster : 0) + '%'}">
+                    <span v-if="started">{{monster}} </span>
+                </div>
+            </div>
+            <canvas v-if="started" id="monsterCanvas"></canvas>
+            <img id="monsterBlast" src="./src/gfx/monster_throw_b.gif" style="right: 20vw"/>
+        </div>
+    </section>
+    </div>
+    <section v-if="!battle" class="row controls">
+        <div class="small-12 columns">
+            <button id="start-game" @click="startOver">START NEW GAME</button>
+        </div>
+    </section>
+    <section v-if="battle" class="row controls">
+        <div class="small-12 columns">
+            <button id="attack" @click="attack" :style="{background:  tiredGradient}">ATTACK</button>
+            <button id="special-attack" @click="specialAttack" :style="{background:  gradientSpec}">SPECIAL ATTACK</button>
+            <button id="heal" :style="{background: healGradient}" @click="you < 100 ? heal() : ''">HEAL</button>
+            <button id="give-up" @click="giveup">GIVE UP</button>
+        </div>
+    </section>
+    <section width="100%" v-if="started" class="row log">
+        <div class="small-12 columns">
+            <!-- <ul>
+                <li v-for="event in eventsList">
+                {{ event }}
+                </li>
+            </ul> -->
+        </div>
+    </section>
+</div>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <script src="src/main.js"></script>
+    <script src="src/animating.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

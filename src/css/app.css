@@ -1,0 +1,239 @@
+body{
+  background-color: black;
+  font-family: purisa;
+  src: url("../font/Purisa.ttf");
+}
+
+@font-face
+{
+  font-family: purisa;
+  src: url("../font/Purisa.ttf");
+}
+
+
+#battle{
+    background-image: url("../gfx/arena.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 70vh
+}
+
+.small-12.columns{
+/*    background-color: darkgrey*/
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1{
+    font-size: 2vh;
+    margin: 2vh 2vw;
+    color: lightcoral;
+    text-shadow: 1px 1px black;
+    margin-top: 10vh;
+}
+
+.row{
+    width: 80vw !important;
+    max-width: unset;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.healthbar {
+    width: 80%;
+    height: 30px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 500ms;
+    border-radius: 8px;
+    text-shadow: 1px 1px black;
+}
+
+.healthbar span{
+
+}
+
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+/*    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;*/
+}
+
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: green;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+.log ul .player-turn {
+    color: blue;
+    background-color: #e4e8ff;
+}
+
+.log ul .monster-turn {
+    color: red;
+    background-color: #ffc0c1;
+}
+
+button {
+    font-size: 20px;
+    background-color: #eee;
+    padding: 12px;
+    box-shadow: 1px 1px 1px white;
+    margin: 10px;
+}
+
+#start-game {
+    background-color: #aaffb0;
+}
+
+#start-game:hover {
+    background-color: #76ff7e;
+}
+
+#attack {
+    background-color: #ff7367;
+}
+
+#attack:hover {
+    background-color: #ff3f43;
+}
+
+#special-attack {
+    background-color: #ffaf4f;
+}
+
+#special-attack:hover {
+    background-color: #ff9a2b;
+}
+
+#heal {
+    background-color: #aaffb0;
+}
+
+#heal:hover {
+    background-color: #76ff7e;
+}
+
+#give-up {
+    background-color: #ffffff;
+}
+
+#give-up:hover {
+    background-color: #c7c7c7;
+}
+
+.whoWin
+{
+    position: absolute;
+    color: #ffc0c0;
+    top: 30vh;
+    left: 0vw;
+    width: 100vw;
+    font-size: 3em;
+    text-shadow: 1px 1px black;
+    text-align: center;
+}
+
+canvas{
+    margin-top: 5vh;
+    width: 40vw;
+    height: 30vh;
+    margin-left: 0vw !important;
+/*    border: 2px solid red;*/
+    margin-right: 0vw;
+    display: inherit;
+    margin-top: 20vh;
+}
+
+#rocket {
+    width: 6vw;
+    height: 3vh;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    position: absolute;
+    top: 53vh;
+    visibility: hidden;
+}
+
+#monsterBlast{
+   width: 8vw;
+    height: 7vh;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    position: absolute;
+    top: 51vh;
+    visibility: hidden;
+}
+
+#rocketBoom
+{
+    width: 8vw;
+    height: 12vh;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    position: absolute;
+    top: 49vh;
+    visibility: hidden;
+}
+
+#pistolBlast{
+  width: 3vw;
+  height: 17vh;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  position: absolute;
+  top: 44vh;
+  left: 31vw;
+  visibility: hidden;
+}
+
+@media screen and (orientation: portrait){
+  #battle{
+    height: 55vh;
+  }
+
+  canvas{
+    width: 48vw;
+    height: 19vh;
+    margin-top: 18vh;
+  }
+
+  .row{
+    width: 100vw !important;
+    margin-left: 0vw;
+  }
+
+  #rocket {
+    top: 43vh;
+  }
+
+  #rocketBoom
+  {
+    top: 39vh;
+  }
+
+  #pistolBlast{
+    top: 38vh;
+  }
+
+  #monsterBlast{
+    top: 42vh;
+  }
+}
